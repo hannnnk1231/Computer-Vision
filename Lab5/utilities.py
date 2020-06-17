@@ -12,7 +12,7 @@ label_type = ['Kitchen', 'Store', 'Bedroom', 'LivingRoom', 'Office',
               'Industrial', 'Suburb', 'InsideCity', 'TallBuilding', 'Street',
               'Highway', 'OpenCountry', 'Coast', 'Mountain', 'Forest']
 
-def get_data(gray=True,size=None):
+def get_data(gray=True,size=None, normal=False):
 
     train_x = []
     test_x = []
@@ -34,6 +34,8 @@ def get_data(gray=True,size=None):
                	    img = cv2.resize(img, (size,size)).reshape((size,size,1))/255.0
             elif size!=None:
                 img = cv2.resize(img, (size,size)).reshape((size,size,3))/255.0
+            if normal:
+                img = cv2.normalize(img, img, 0, 255, cv2.NORM_MINMAX)
             train_x.append(img)
             
         for fname in testing_imgs:
@@ -45,6 +47,8 @@ def get_data(gray=True,size=None):
                     img = cv2.resize(img, (size,size)).reshape((size,size,1))/255.0
             elif size!=None:
                 img = cv2.resize(img, (size,size)).reshape((size,size,3))/255.0
+            if normal:
+                img = cv2.normalize(img, img, 0, 255, cv2.NORM_MINMAX)
             test_x.append(img)
     if size!=None:
         train_x = np.array(train_x).astype(np.float32)
