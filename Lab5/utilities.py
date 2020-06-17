@@ -8,7 +8,9 @@ import matplotlib
 from keras.utils import to_categorical
 from sklearn.metrics import confusion_matrix
 
-label_type = ['Bedroom', 'Coast', 'Forest', 'Highway', 'Industrial', 'InsideCity', 'Kitchen', 'LivingRoom', 'Mountain', 'Office','OpenCountry', 'Store', 'Street', 'Suburb', 'TallBuilding']
+label_type = ['Kitchen', 'Store', 'Bedroom', 'LivingRoom', 'Office',
+              'Industrial', 'Suburb', 'InsideCity', 'TallBuilding', 'Street',
+              'Highway', 'OpenCountry', 'Coast', 'Mountain', 'Forest']
 
 def get_data(gray=True,size=None):
 
@@ -28,7 +30,7 @@ def get_data(gray=True,size=None):
             img = cv2.imread(fname)
             if gray:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            if size!=None:
+                if size!=None:
                	    img = cv2.resize(img, (size,size)).reshape((size,size,1))/255.0
             elif size!=None:
                 img = cv2.resize(img, (size,size)).reshape((size,size,3))/255.0
@@ -49,12 +51,12 @@ def get_data(gray=True,size=None):
         test_x = np.array(test_x).astype(np.float32)
     train_y = np.array(train_y).astype(np.float32)
     test_y = np.array(test_y).astype(np.float32)
-    train_y = to_categorical(train_y)
-    test_y = to_categorical(test_y)
     
     return(train_x,train_y,test_x,test_y)
 
 def plot_heatmap(true_y, pred_y, save_dir):
+    true_y = [label_type[x] for x in true_y]
+    pred_y = [label_type[x] for x in pred_y]
     sns.heatmap(confusion_matrix(true_y, pred_y, labels=label_type, normalize='true'),xticklabels=label_type,yticklabels=label_type)
     plt.tight_layout()
     plt.savefig(save_dir)
@@ -66,7 +68,10 @@ def plot_res(true_y, pred_y, save_dir='res'):
             # no key: the whole element must be unique
             key = lambda e: e
         return list({key(el): el for el in elements}.values())
-    
+
+    true_y = [label_type[x] for x in true_y]
+    pred_y = [label_type[x] for x in pred_y]
+
     train = []
     test = []
 
