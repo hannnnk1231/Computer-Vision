@@ -1,10 +1,13 @@
 # Computer Vision 
-The labs/assignments of 2020 Spring (108-2) Computer Vision class at National Chiao Tung Class (NCTU) by Professor Wei-Chen Chiu. 
+These are the labs/assignments of 2020 Spring (108-2) Computer Vision class at National Chiao Tung University (NCTU) by Prof. Wei-Chen Chiu. 
 
-This is just for your reference, please do not copy-paste the code here to complete your assignment!
+:bangbang: Just for your reference, please do not copy-paste the code here to complete your assignment :relieved: :relieved:
 
 
-## Contents
+## :clipboard: Contents
+
+> All labs scored 100% :100:
+
 Lab1: Camera Calibration
 
 Lab2: Hybrid Image / Image Pyramid / Colorizing the Russian Empire
@@ -14,3 +17,4 @@ Lab3: Automatic Panoramic Image Stitching
 Lab4: Structure from Motion (SfM)
 
 Lab5: Image Classifier
+
