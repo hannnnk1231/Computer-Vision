@@ -1,5 +1,7 @@
 # Computer Vision 
-The labs/assignments of 2020 Spring (108-2) Computer Vision class at National Chiao Tung Class (NCTU) by Professor Wei-Chen Chiu. This is just for your reference, please do not copy-paste the code here to complete your assignment!
+The labs/assignments of 2020 Spring (108-2) Computer Vision class at National Chiao Tung Class (NCTU) by Professor Wei-Chen Chiu. 
+
+This is just for your reference, please do not copy-paste the code here to complete your assignment!
 
 
 ## Contents
