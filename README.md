@@ -1,7 +1,7 @@
 # Computer Vision 
 These are the labs/assignments of 2020 Spring (108-2) Computer Vision class at National Chiao Tung University (NCTU) by Prof. Wei-Chen Chiu. 
 
- :bangbang: Just for your reference, please do not copy-paste the code here to complete your assignment :relieved: :relieved:
+:no_entry_sign: Just for your reference, please do not copy-paste the code here to complete your assignment :relieved: :relieved:
 
 
 ## :clipboard: Contents
